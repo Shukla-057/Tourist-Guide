@@ -48,21 +48,25 @@ public class LoginActivity extends AppCompatActivity {
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
 
-        btnSignup.setOnClickListener(v -> startActivity(new Intent(LoginActivity.this, SignUpActivity.class)));
+        btnSignup.setOnClickListener(v -> startActivity(new Intent(LoginActivity.this
+                , SignUpActivity.class)));
 
-        btnReset.setOnClickListener(v -> startActivity(new Intent(LoginActivity.this, ForgotPasswordActivity.class)));
+        btnReset.setOnClickListener(v -> startActivity(new Intent(LoginActivity.this
+                , ForgotPasswordActivity.class)));
 
         btnLogin.setOnClickListener(v -> {
             String email = inputEmail.getText().toString();
             final String password = inputPassword.getText().toString();
 
             if (TextUtils.isEmpty(email)) {
-                Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Enter email address!"
+                        , Toast.LENGTH_SHORT).show();
                 return;
             }
 
             if (TextUtils.isEmpty(password)) {
-                Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Enter password!"
+                        , Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -78,12 +82,16 @@ public class LoginActivity extends AppCompatActivity {
                         if (!task.isSuccessful()) {
                             // there was an error
                             if (password.length() < 6) {
-                                inputPassword.setError(getString(R.string.minimum_password));
+                                inputPassword
+                                        .setError(getString(R.string.minimum_password));
                             } else {
-                                Toast.makeText(LoginActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
+                                Toast.makeText(LoginActivity.this
+                                        , getString(R.string.auth_failed)
+                                        , Toast.LENGTH_LONG).show();
                             }
                         } else {
-                            Intent intent = new Intent(LoginActivity.this, HomeScreenActivity.class);
+                            Intent intent = new Intent(LoginActivity.this
+                                    , HomeScreenActivity.class);
                             startActivity(intent);
                             finish();
                         }
