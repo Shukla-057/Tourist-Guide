@@ -32,7 +32,7 @@
                 android:layout_height="@dimen/logo_w_h"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="30dp"
-                android:src="@drawable/app_icon_foreground"
+                android:src="@drawable/ic_launcher_foreground"
                 tools:ignore="ContentDescription" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -46,6 +46,7 @@
                     android:layout_marginBottom="10dp"
                     android:background="@android:color/transparent"
                     android:hint="@string/hint_email"
+                    android:maxLength="30"
                     android:importantForAutofill="no"
                     android:inputType="textEmailAddress"
                     android:textColor="@android:color/white"
@@ -63,6 +64,7 @@
                     android:layout_marginBottom="10dp"
                     android:background="@android:color/transparent"
                     android:hint="@string/hint_password"
+                    android:maxLength="20"
                     android:importantForAutofill="no"
                     android:inputType="textPassword"
                     android:textColor="@android:color/white"
