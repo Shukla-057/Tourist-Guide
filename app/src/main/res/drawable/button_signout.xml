@@ -1,0 +1,12 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/btn_logut_bg" />
+    <corners android:radius="8dp" />
+    <stroke
+        android:width="3dp"
+        android:color="@color/black" />
+    <padding
+        android:bottom="2dp"
+        android:left="3dp"
+        android:right="3dp"
+        android:top="2dp" />
+</shape>

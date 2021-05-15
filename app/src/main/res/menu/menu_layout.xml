@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item
-            android:id="@+id/UserSetting"
+            android:id="@+id/item_UserSetting"
             android:title="@string/txt_account_setting" />
-
 </menu>

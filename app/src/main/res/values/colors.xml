@@ -11,7 +11,7 @@
     <color name="colorPrimary">#00bcd4</color>
     <color name="colorPrimaryDark">#0097a7</color>
     <color name="colorAccent">#f2fe71</color>
-    <color name="btn_logut_bg">#ff6861</color>
-    <color name="background_layout">#E3F2FD</color>
-
+    <color name="btn_logut_bg">#FF0000</color>
+    <color name="bg_layout">#E3F2FD</color>
+    <color name="bg_linear_layout">#BBDEFB</color>
 </resources>

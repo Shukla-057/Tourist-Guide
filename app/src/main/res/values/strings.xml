@@ -29,4 +29,7 @@
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
     <string name="txt_account_setting">AccountSetting</string>
     <string name="btn_txt_forgot_password">forgot password</string>
+    <string name="txt_input_email_helper_text">exampleabc123@gmail.com</string>
+    <string name="txt_input_password_helper_text">Password!@#123</string>
+    <string name="btn_txt_send_password_reset_email">send password reset email</string>
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,84 +11,92 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@color/light_blue_200"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="@dimen/activity_horizontal_margin">
-
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="@style/Widget.AppCompat.ProgressBar"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:visibility="invisible" />
 
             <ImageView
                 android:layout_width="@dimen/logo_w_h"
                 android:layout_height="@dimen/logo_w_h"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="14dp"
                 android:layout_marginBottom="30dp"
                 android:src="@drawable/ic_launcher_foreground"
                 tools:ignore="ContentDescription" />
 
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/hint_email"
+                app:counterEnabled="true"
+                app:counterMaxLength="30"
+                app:endIconMode="clear_text"
+                app:errorEnabled="true"
+                app:helperText="@string/txt_input_email_helper_text"
+                app:startIconContentDescription="@string/hint_email"
+                app:startIconDrawable="@drawable/ic_baseline_email_24">
 
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:background="@android:color/transparent"
-                    android:hint="@string/hint_email"
-                    android:maxLength="30"
                     android:importantForAutofill="no"
                     android:inputType="textEmailAddress"
+                    android:maxLength="30"
+                    android:maxLines="1"
                     android:textColor="@android:color/white"
-                    android:textColorHint="@android:color/white" />
+                    android:textColorHint="@android:color/black" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:hint="@string/hint_password"
+                app:counterEnabled="true"
+                app:counterMaxLength="20"
+                app:endIconMode="password_toggle"
+                app:errorEnabled="true"
+                app:helperText="@string/txt_input_password_helper_text"
+                app:startIconContentDescription="@string/hint_password"
+                app:startIconDrawable="@drawable/ic_baseline_lock_24">
 
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password"
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:background="@android:color/transparent"
-                    android:hint="@string/hint_password"
-                    android:maxLength="20"
                     android:importantForAutofill="no"
                     android:inputType="textPassword"
+                    android:maxLength="20"
+                    android:maxLines="1"
                     android:textColor="@android:color/white"
-                    android:textColorHint="@android:color/white" />
+                    android:textColorHint="@android:color/black" />
             </com.google.android.material.textfield.TextInputLayout>
-
-            <!-- Login Button -->
 
             <Button
                 android:id="@+id/btn_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@color/light_blue_500"
+                android:layout_marginBottom="@dimen/margin_bottom"
+                android:background="@drawable/btn_bg"
                 android:text="@string/btn_login"
-                android:textColor="@android:color/black" />
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/btn_reset_password"
-                android:layout_width="fill_parent"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@android:color/transparent"
+                android:layout_marginBottom="@dimen/margin_bottom"
                 android:text="@string/btn_forgot_password"
                 android:textAllCaps="false"
                 android:textColor="@color/colorAccent" />
@@ -95,10 +104,10 @@
 
             <Button
                 android:id="@+id/btn_signup"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@android:color/transparent"
+                android:layout_marginBottom="@dimen/margin_bottom"
                 android:text="@string/btn_link_to_register"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
@@ -109,6 +118,13 @@
 
 
     </ScrollView>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="@dimen/progressbar_w_h"
+        android:layout_height="@dimen/progressbar_w_h"
+        android:layout_gravity="center_horizontal"
+        android:visibility="invisible" />
 
 
-</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
