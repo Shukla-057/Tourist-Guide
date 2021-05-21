@@ -3,15 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_blue_500"
     android:layout_gravity="center"
+    android:background="@color/light_blue_500"
     tools:context=".splashscreen.SplashScreen">
 
     <ImageView
         android:layout_width="@dimen/logo_w_h"
         android:layout_height="@dimen/logo_w_h"
-        android:src="@drawable/ic_launcher_foreground"
         android:layout_gravity="center"
+        android:src="@drawable/ic_launcher_foreground"
         tools:ignore="ContentDescription" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

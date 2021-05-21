@@ -2,11 +2,11 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CL_user_setting"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_layout"
     tools:context=".menu.UserSettingActivity">
-
 
 
     <ScrollView
@@ -22,12 +22,50 @@
             android:padding="@dimen/activity_horizontal_margin">
 
             <ImageView
-                android:layout_width="@dimen/logo_w_h"
-                android:layout_height="@dimen/logo_w_h"
+                android:id="@+id/Image_View_user_profie"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_marginTop="9dp"
                 android:layout_marginBottom="25dp"
                 android:src="@drawable/ic_sharp_person_24"
                 tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="@dimen/margin_bottom"
+                android:fontFamily="@font/playfairdisplay_regular"
+                android:gravity="center"
+                android:text="@string/txt_user_name"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/Text_View_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/playfairdisplay_regular"
+                android:text="@string/txt_user_information"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/Text_View_user_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="@dimen/margin_bottom"
+                android:fontFamily="@font/playfairdisplay_regular"
+                android:text="@string/txt_user_email"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -175,7 +213,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="@dimen/margin_bottom"
                 android:background="@drawable/btn_bg"
-                android:text="@string/remove_user"
+                android:text="@string/remove_account"
                 android:textColor="@color/black" />
 
             <Button
@@ -187,17 +225,18 @@
                 android:layout_marginBottom="@dimen/margin_bottom"
                 android:background="@drawable/btn_bg"
                 android:backgroundTint="@color/btn_logut_bg"
-                android:backgroundTintMode="src_atop"
+                android:backgroundTintMode="add"
                 android:text="@string/btn_sign_out"
                 android:textColor="@color/black" />
         </LinearLayout>
     </ScrollView>
+
     <ProgressBar
         android:id="@+id/progressBar"
         style="@style/Widget.AppCompat.ProgressBar"
         android:layout_width="@dimen/progressbar_w_h"
         android:layout_height="@dimen/progressbar_w_h"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="bottom|center"
         android:visibility="invisible" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

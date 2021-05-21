@@ -10,18 +10,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.touristguide.menu.UserSettingActivity;
 
-public class HomeScreenActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
-        /*inItView();
-        clickOnListner();*/
+        inItView();
+        clickOnListner();
 
     }
-    /*private void inItView() {
 
-    }*/
+    private void inItView() {
+
+    }
 
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -35,14 +36,16 @@ public class HomeScreenActivity extends AppCompatActivity {
         int id = item.getItemId();
         switch (id) {
             case R.id.item_UserSetting:
-                startActivity(new Intent(HomeScreenActivity.this, UserSettingActivity.class));
+                startActivity(new Intent(MainActivity.this
+                        , UserSettingActivity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
-    /*private void clickOnListner(){
 
-    }*/
+    private void clickOnListner() {
+
+    }
 }
 

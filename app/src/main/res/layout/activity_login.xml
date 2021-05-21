@@ -92,6 +92,18 @@
                 android:textColor="@color/black" />
 
             <Button
+                android:id="@+id/btn_signup"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_bottom"
+                android:background="@drawable/btn_bg_tranceparent"
+                android:text="@string/btn_link_to_register"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                tools:ignore="SpUsage" />
+
+            <Button
                 android:id="@+id/btn_reset_password"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="match_parent"
@@ -102,28 +114,32 @@
                 android:textColor="@color/colorAccent" />
 
 
-            <Button
-                android:id="@+id/btn_signup"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_width="fill_parent"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_bottom"
-                android:text="@string/btn_link_to_register"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="15dp"
-                tools:ignore="SpUsage" />
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="Sign in with"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:src="@drawable/common_google_signin_btn_icon_dark_focused" />
 
         </LinearLayout>
 
-
     </ScrollView>
+
     <ProgressBar
         android:id="@+id/progressBar"
         style="@style/Widget.AppCompat.ProgressBar"
         android:layout_width="@dimen/progressbar_w_h"
         android:layout_height="@dimen/progressbar_w_h"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="bottom|center"
         android:visibility="invisible" />
 
 

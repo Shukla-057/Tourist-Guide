@@ -12,12 +12,15 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.touristguide.HomeScreenActivity;
+import com.touristguide.MainActivity;
 import com.touristguide.R;
 
 import java.util.Objects;
 
 public class SignUpActivity extends AppCompatActivity {
+    Button btnResetPassword;
+    Button btnSignIn;
+    Button btnSignUp;
     private EditText inputEmail, inputPassword;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
@@ -27,18 +30,23 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.activity_sign_up);
-
-        //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
+        inItView();
+        clickOnListner();
+    }
 
-        Button btnSignIn = findViewById(R.id.sign_in_button);
-        Button btnSignUp = findViewById(R.id.sign_up_button);
+    private void inItView() {
+        btnSignIn = findViewById(R.id.sign_in_button);
+        btnSignUp = findViewById(R.id.sign_up_button);
         inputEmail = findViewById(R.id.email);
         inputPassword = findViewById(R.id.password);
         progressBar = findViewById(R.id.progressBar);
-        Button btnResetPassword = findViewById(R.id.btn_reset_password);
+        btnResetPassword = findViewById(R.id.btn_reset_password);
+    }
 
-        btnResetPassword.setOnClickListener(v -> startActivity(new Intent(SignUpActivity.this, ForgotPasswordActivity.class)));
+    private void clickOnListner() {
+        btnResetPassword.setOnClickListener(v -> startActivity(new Intent(SignUpActivity.this
+                , ForgotPasswordActivity.class)));
 
         btnSignIn.setOnClickListener(v -> finish());
 
@@ -58,7 +66,8 @@ public class SignUpActivity extends AppCompatActivity {
             }
 
             if (password.length() < 6) {
-                Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!"
+                        , Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -66,16 +75,19 @@ public class SignUpActivity extends AppCompatActivity {
             //create user
             auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(SignUpActivity.this, task -> {
-                        Toast.makeText(SignUpActivity.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignUpActivity.this, "createUserWithEmail:onComplete:"
+                                + task.isSuccessful(), Toast.LENGTH_SHORT).show();
                         progressBar.setVisibility(View.GONE);
                         // If sign in fails, display a message to the user. If sign in succeeds
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
-                            Toast.makeText(SignUpActivity.this, "Authentication failed." + task.getException(),
+                            Toast.makeText(SignUpActivity.this, "Authentication failed."
+                                            + task.getException(),
                                     Toast.LENGTH_SHORT).show();
                         } else {
-                            startActivity(new Intent(SignUpActivity.this, HomeScreenActivity.class));
+                            startActivity(new Intent(SignUpActivity.this
+                                    , MainActivity.class));
                             finish();
                         }
                     });

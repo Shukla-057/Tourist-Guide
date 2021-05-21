@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -13,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
-import com.touristguide.HomeScreenActivity;
+import com.touristguide.MainActivity;
 import com.touristguide.R;
 
 import java.util.Objects;
@@ -23,6 +22,9 @@ public class LoginActivity extends AppCompatActivity {
     private TextInputEditText inputEmail, inputPassword;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
+    private Button btnSignup;
+    private Button btnLogin;
+    private Button btnReset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,22 +34,26 @@ public class LoginActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
         if (auth.getCurrentUser() != null) {
-            startActivity(new Intent(LoginActivity.this, HomeScreenActivity.class));
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
             finish();
         }
-
         // set the view now
         setContentView(R.layout.activity_login);
+        inItView();
+        clickOnListner();
 
+    }
+
+    private void inItView() {
         inputEmail = findViewById(R.id.email);
         inputPassword = findViewById(R.id.password);
         progressBar = findViewById(R.id.progressBar);
-        Button btnSignup = findViewById(R.id.btn_signup);
-        Button btnLogin = findViewById(R.id.btn_login);
-        Button btnReset = findViewById(R.id.btn_reset_password);
+        btnSignup = findViewById(R.id.btn_signup);
+        btnLogin = findViewById(R.id.btn_login);
+        btnReset = findViewById(R.id.btn_reset_password);
+    }
 
-        //Get Firebase auth instance
-        auth = FirebaseAuth.getInstance();
+    private void clickOnListner() {
 
         btnSignup.setOnClickListener(v -> startActivity(new Intent(LoginActivity.this
                 , SignUpActivity.class)));
@@ -92,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
                             }
                         } else {
                             Intent intent = new Intent(LoginActivity.this
-                                    , HomeScreenActivity.class);
+                                    , MainActivity.class);
                             startActivity(intent);
                             finish();
                         }

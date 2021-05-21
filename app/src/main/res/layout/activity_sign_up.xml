@@ -93,6 +93,16 @@
                 android:text="@string/action_sign_in_short"
                 android:textColor="@android:color/black"
                 android:textStyle="bold" />
+            <Button
+                android:id="@+id/sign_in_button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_bg_tranceparent"
+                android:layout_marginTop="20dp"
+                android:text="@string/btn_link_to_login"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
 
             <Button
                 android:id="@+id/btn_reset_password"
@@ -104,25 +114,15 @@
                 android:textAllCaps="false"
                 android:textColor="@color/colorAccent" />
 
-
-            <Button
-                android:id="@+id/sign_in_button"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/btn_link_to_login"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="15sp" />
         </LinearLayout>
     </ScrollView>
+
     <ProgressBar
         android:id="@+id/progressBar"
         style="@style/Widget.AppCompat.ProgressBar"
         android:layout_width="@dimen/progressbar_w_h"
         android:layout_height="@dimen/progressbar_w_h"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="bottom|center"
         android:visibility="invisible" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

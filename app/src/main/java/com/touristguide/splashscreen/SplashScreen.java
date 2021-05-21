@@ -25,7 +25,8 @@ public class SplashScreen extends AppCompatActivity {
     private void run() {
         try {
             Thread.sleep(400);
-            SplashScreen.this.startActivity(new Intent(SplashScreen.this, LoginActivity.class));
+            SplashScreen.this.startActivity(new Intent(SplashScreen.this
+                    , LoginActivity.class));
             SplashScreen.this.finish();
         } catch (Exception e) {
             Toast.makeText(SplashScreen.this, "Error", Toast.LENGTH_SHORT).show();

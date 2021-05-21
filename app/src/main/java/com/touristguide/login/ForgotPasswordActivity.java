@@ -19,18 +19,26 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     private EditText inputEmail;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
+    private Button btnReset;
+    private Button btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.activity_forgot_password);
+        inItView();
+        clickOnListner();
+    }
 
-        inputEmail = (EditText) findViewById(R.id.email);
-        Button btnReset = (Button) findViewById(R.id.btn_reset_password);
-        Button btnBack = (Button) findViewById(R.id.btn_back);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+    private void inItView() {
+        inputEmail = findViewById(R.id.email);
+        btnReset = findViewById(R.id.btn_reset_password);
+        btnBack = findViewById(R.id.btn_back);
+        progressBar = findViewById(R.id.progressBar);
+    }
 
+    private void clickOnListner() {
         auth = FirebaseAuth.getInstance();
 
         btnBack.setOnClickListener(v -> finish());
@@ -57,5 +65,4 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                     });
         });
     }
-
 }

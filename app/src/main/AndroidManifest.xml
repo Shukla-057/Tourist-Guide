@@ -3,6 +3,7 @@
     package="com.touristguide">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -11,9 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TouristGuide">
-        <activity android:name=".menu.UserSettingActivity"
-            android:label="@string/txt_account_setting" >
-        </activity>
+        <activity
+            android:name=".menu.UserSettingActivity"
+            android:label="@string/txt_account_setting"></activity>
         <activity android:name=".login.ForgotPasswordActivity" />
         <activity android:name=".login.SignUpActivity" />
         <activity android:name=".login.LoginActivity" />
@@ -24,7 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeScreenActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
